@@ -1,8 +1,8 @@
 package poofundamentos_2;
 
-public class Cliente {
+public abstract class Cliente {
 
-			
+		protected String tipo;
 		private String nome;
 		private String sobreNome;
 		private String endereco;
@@ -10,8 +10,9 @@ public class Cliente {
 		
 	
 		
-		public Cliente(String nome, String sobreNome, String endereco, String telefone) {
+		public Cliente(String tipo, String nome, String sobreNome, String endereco, String telefone) {
 			super();
+			this.tipo = tipo;
 			this.nome = nome;
 			this.sobreNome = sobreNome;
 			this.endereco = endereco;
@@ -19,6 +20,15 @@ public class Cliente {
 		}
 
 
+		public String getTipo() {
+			return tipo;
+		}
+
+
+
+		public void setTipo(String tipo) {
+			this.tipo = tipo;
+		}
 
 
 		public String getNome() {
@@ -77,11 +87,12 @@ public class Cliente {
 
 		public void visualizar() {
 			System.out.println("\n\n***************************************************");
-			System.out.println("Dados do cliente :");
+			System.out.println("\n################  Dados do cliente  ###############");
 			System.out.println("\n\n***************************************************");
-			System.out.println("Nome do cliente : " + nome + " " + sobreNome);
-			System.out.println("\nEndereço do cliente : " + endereco);
-			System.out.println("\nTelefone do cliente : " + telefone);
+			System.out.println("\nCliente : " + tipo );
+			System.out.println("\nNome do cliente : " + nome + " " + sobreNome);
+			System.out.println("\nEndereço : " + endereco);
+			System.out.println("\nTelefone : " + telefone);
 		}
 
 		 	

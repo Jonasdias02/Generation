@@ -3,14 +3,14 @@ package poofundamentos_2;
 public class PessoaJuridica extends Cliente {
 	
 	private String cnpj;
-
 	
-	public PessoaJuridica(String nome, String sobreNome, String endereco, String telefone, String cnpj) {
-		super(nome, sobreNome, endereco, telefone);
+	
+	public PessoaJuridica(String tipo, String nome, String sobreNome, String endereco, String telefone, String cnpj) {
+		super(tipo, nome, sobreNome, endereco, telefone);
 		this.cnpj = cnpj;
 	}
 
-
+	
 
 	public String getCnpj() {
 		return cnpj;
@@ -28,7 +28,7 @@ public class PessoaJuridica extends Cliente {
 	public void visualizar() {
 
 		super.visualizar();
-		System.out.println("\nCNPJ: " + cnpj);
+		System.out.println("\nCNPJ : " + cnpj);
 	
 	}
 	
