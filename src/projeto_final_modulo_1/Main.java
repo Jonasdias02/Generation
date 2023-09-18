@@ -7,32 +7,35 @@ public abstract class Main {
 	        Scanner scanner = new Scanner(System.in);
 	        Loja loja = new Loja();
 
-	        // Adicione alguns produtos à loja
+	        // Adicionando alguns produtos à loja
 	        loja.adicionarProduto(new Produto("Camiseta", "Roupas", 20.0, 50));
 	        loja.adicionarProduto(new Produto("Calça", "Roupas", 40.0, 20));
 	        loja.adicionarProduto(new Produto("Tênis", "Calçados", 60.0, 20));
+	        loja.adicionarProduto(new Produto("Chinelo", "Calçados", 20.0, 20));
 
 	        while (true) {
-	        	System.out.println("\n----------------------------------");
-	            System.out.println("                Menu               ");
-	            System.out.println("----------------------------------");
+	        	System.out.println(); 
+	        	System.out.println("**********************************");
+	            System.out.println(Cores.TEXT_GREEN + "\n               Menu               " + Cores.TEXT_RESET);
+	            System.out.println("\n----------------------------------");
+	            System.out.println(Cores.TEXT_GREEN); 
 	            System.out.println("\n        1. Listar produtos        ");
 	            System.out.println("\n        2. Comprar produto        ");
-	            System.out.println("\n        3. Sair                   ");
-	            System.out.println("\n----------------------------------");
+	            System.out.println("\n        3. Sair                   " + Cores.TEXT_RESET);
+	            System.out.println("\n**********************************");
 	            System.out.print("Escolha uma opção: ");
-
+	            System.out.println();
 	            int opcao = scanner.nextInt();
 
 	            switch (opcao) {
 	                case 1:
 	                	System.out.println("\n----------------------------------");
-	                    System.out.println("\nProdutos disponíveis:");
+	                    System.out.println(Cores.TEXT_GREEN +"\nProdutos disponíveis:" + Cores.TEXT_RESET);
 	                    System.out.println("\n----------------------------------");
 	                    loja.listarProdutos();
 	                    break;
 	                case 2:
-	                    System.out.print("Digite o nome do produto que deseja comprar: ");
+	                    System.out.print(Cores.TEXT_GREEN +"Digite o nome do produto que deseja comprar: " + Cores.TEXT_RESET);
 	                    String nomeProduto = scanner.next();
 	                    for (Produto produto : loja.getProdutos()) {
 	                        if (produto.getNome().equalsIgnoreCase(nomeProduto)) {
@@ -41,24 +44,24 @@ public abstract class Main {
 	                                int quantidade = scanner.nextInt();
 	                                if (quantidade <= produto.getEstoque()) {
 	                                    produto.diminuirEstoque(quantidade);
-	                                    System.out.println("Compra realizada com sucesso!!!");
-	                                    System.out.println("Total a pagar: R$" + (produto.getPreco() * quantidade));
+	                                    System.out.println(Cores.TEXT_BLUE + "Compra realizada com sucesso!!!" + Cores.TEXT_RESET);
+	                                    System.out.println(Cores.TEXT_GREEN + "Total a pagar: " + Cores.TEXT_RESET + "R$" + (produto.getPreco() * quantidade));
 	                                } else {
-	                                    System.out.println("Quantidade indisponível em estoque.");
+	                                    System.out.println(Cores.TEXT_RED + "Quantidade indisponível em estoque." + Cores.TEXT_RESET);
 	                                }
 	                            } else {
-	                                System.out.println("Produto esgotado.");
+	                                System.out.println(Cores.TEXT_RED + "Produto esgotado." + Cores.TEXT_RESET);
 	                            }
 	                            break;
 	                        }
 	                    }
 	                    break;
 	                case 3:
-	                    System.out.println("Saindo da loja. Volte sempre!");
+	                    System.out.println(Cores.TEXT_BLUE +"Saindo da loja. Volte sempre!" + Cores.TEXT_RESET);
 	                    scanner.close();
 	                    System.exit(0);
 	                default:
-	                    System.out.println("Opção inválida. Tente novamente.");
+	                    System.out.println(Cores.TEXT_PURPLE +"Opção inválida. Tente novamente." + Cores.TEXT_RESET);
 	                    break;
 	            }
 	        }

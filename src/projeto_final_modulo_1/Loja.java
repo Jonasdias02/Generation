@@ -13,10 +13,10 @@ public class Loja extends Main{
 
     public void listarProdutos() {
         for (Produto produto : getProdutos()) {
-            System.out.println("Nome: " + produto.getNome());
-            System.out.println("Categoria: " + produto.getCategoria());
-            System.out.println("Preço: R$" + produto.getPreco());
-            System.out.println("Estoque: " + produto.getEstoque());
+            System.out.println(Cores.TEXT_GREEN + "Nome: " + Cores.TEXT_RESET + produto.getNome());
+            System.out.println(Cores.TEXT_GREEN + "Categoria: " + Cores.TEXT_RESET + produto.getCategoria());
+            System.out.println(Cores.TEXT_GREEN + "Preço: " + Cores.TEXT_RESET + "R$" + produto.getPreco());
+            System.out.println(Cores.TEXT_GREEN + "Estoque: " + Cores.TEXT_RESET + produto.getEstoque());
             System.out.println("");
         }
     }
