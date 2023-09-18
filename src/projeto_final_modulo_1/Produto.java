@@ -1,33 +1,52 @@
 package projeto_final_modulo_1;
 
-public class Produto extends Loja {
-	
-	    private String nome;
-	    private double preco;
-	    private String tamanho;
-	    private String cor;
 
-	    public Produto(String nome, double preco, String tamanho, String cor) {
-	        this.nome = nome;
-	        this.preco = preco;
-	        this.tamanho = tamanho;
-	        this.cor = cor;
-	    }
+public class Produto extends Loja{
+    String nome;
+    String categoria;
+    double preco;
+    int estoque;
 
-	    public String getNome() {
-	        return nome;
-	    }
+    public Produto(String nome, String categoria, double preco, int estoque) {
+        this.nome = nome;
+        this.categoria = categoria;
+        this.preco = preco;
+        this.estoque = estoque;
+    }
 
-	    public double getPreco() {
-	        return preco;
-	    }
-	    
-	    public String getTamanho() {
-	        return tamanho;
-	    }
-	    
-	    public String getCor() {
-	        return cor;
-	    }
+    public void setNome(String nome) {
+		this.nome = nome;
 	}
 
+	public void setCategoria(String categoria) {
+		this.categoria = categoria;
+	}
+
+	public void setPreco(double preco) {
+		this.preco = preco;
+	}
+
+	public void setEstoque(int estoque) {
+		this.estoque = estoque;
+	}
+
+	public String getNome() {
+        return nome;
+    }
+
+    public String getCategoria() {
+        return categoria;
+    }
+
+    public double getPreco() {
+        return preco;
+    }
+
+    public int getEstoque() {
+        return estoque;
+    }
+
+    public void diminuirEstoque(int quantidade) {
+        estoque -= quantidade;
+    }
+}

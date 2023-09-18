@@ -3,23 +3,29 @@ package projeto_final_modulo_1;
 import java.util.ArrayList;
 
 
-public class Loja {
+public class Loja extends Main{
 
-		
-		    private ArrayList<Produto> estoque;
+	private ArrayList<Produto> produtos = new ArrayList<>();
 
-		    public Loja() {
-		        estoque = new ArrayList<>();
-		    }
+    public void adicionarProduto(Produto produto) {
+        getProdutos().add(produto);
+    }
 
-		    public void adicionarProduto(Produto produto) {
-		        estoque.add(produto);
-		    }
+    public void listarProdutos() {
+        for (Produto produto : getProdutos()) {
+            System.out.println("Nome: " + produto.getNome());
+            System.out.println("Categoria: " + produto.getCategoria());
+            System.out.println("Preço: R$" + produto.getPreco());
+            System.out.println("Estoque: " + produto.getEstoque());
+            System.out.println("");
+        }
+    }
 
-		    public void listarProdutos() {
-		        System.out.println("Produtos disponíveis na loja:");
-		        for (Produto produto : estoque) {
-		            System.out.println(produto.getNome() + " - R$" + produto.getPreco() + " - " + produto.getTamanho()+ " - " + produto.getCor());
-		        }
-		    }
-		}
+	public ArrayList<Produto> getProdutos() {
+		return produtos;
+	}
+
+	public void setProdutos(ArrayList<Produto> produtos) {
+		this.produtos = produtos;
+	}
+}
