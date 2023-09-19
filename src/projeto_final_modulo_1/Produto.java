@@ -1,5 +1,6 @@
 package projeto_final_modulo_1;
 
+		//Métodos Construtores
 
 public class Produto extends Loja{
     String nome;
